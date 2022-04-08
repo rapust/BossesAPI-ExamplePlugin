@@ -1,0 +1,13 @@
+name: BossesAPI
+version: project_version
+api-version: 1.16
+main: net.rapust.bapi.BossesAPI
+author: rapust
+
+commands:
+  bossesapi:
+    usage: /bossesapi help
+    permission: bossesapi.main
+    description: Main BossesAPI command
+    aliases:
+      - bapi

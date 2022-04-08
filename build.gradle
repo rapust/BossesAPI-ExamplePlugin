@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_16
+    targetCompatibility = JavaVersion.VERSION_16
+}
+
+group 'net.rapust'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+shadowJar {
+    getDestinationDirectory().set(new File("${projectDir}", "output"))
+    archiveFileName.set("${project.name}.jar")
+    filesMatching('plugin.yml') {
+        filter {
+            it.replace('project_version', "${project.version}")
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.9.0'
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    compileOnly name: 'spigot-1.16.5'
+
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+}

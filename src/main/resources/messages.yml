@@ -1,0 +1,23 @@
+messages:
+  prefix: "&a&lBosses &8> &r"
+  bossesapi:
+    no_perm: "&cYou don't have permissions!"
+    help: "&eUsage: &a/bossesapi reload"
+    reloaded: "&aThe plugin is reloaded!"
+    error_reloading: "&cError while reloading the plugin!"
+  spawned: "&aBoss &e%boss% &awas spawned!"
+  killed: "&aBoss &e%boss% &awas killed! TOP-3 players:"
+  players_top: "&8 - &a%player_name% &7(&e%damage%&7)"
+
+time:
+  hours: "hours"
+  minutes: "minutes"
+  seconds: "seconds"
+
+holograms:
+  spawning:
+    - "&aHey, &e%player_name%&a!"
+    - "&e%boss% &awill be spawned in &e%time%&a!"
+  spawned:
+    - "&aHey, &e%player_name%&a!"
+    - "&e%boss% &ais spawned!"
