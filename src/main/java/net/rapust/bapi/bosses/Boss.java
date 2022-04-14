@@ -9,6 +9,7 @@ import net.rapust.bapi.managers.BossesManager;
 import net.rapust.bapi.triggers.DamageTypeTrigger;
 import net.rapust.bapi.triggers.HealthTrigger;
 import net.rapust.bapi.triggers.TimedTrigger;
+import net.rapust.bapi.triggers.Trigger;
 import net.rapust.bapi.utils.Logger;
 import net.rapust.bapi.utils.Messages;
 import org.bukkit.Bukkit;
@@ -188,16 +189,8 @@ public class Boss {
         }
 
         triggers.forEach(trigger -> {
-            if (trigger instanceof TimedTrigger timedTrigger) {
-                timedTrigger.getAbility().getSchedulers().forEach(id -> {
-                    Bukkit.getScheduler().cancelTask(id);
-                });
-            } else if (trigger instanceof HealthTrigger healthTrigger) {
-                healthTrigger.getAbility().getSchedulers().forEach(id -> {
-                    Bukkit.getScheduler().cancelTask(id);
-                });
-            } else if (trigger instanceof DamageTypeTrigger damageTypeTrigger) {
-                damageTypeTrigger.getAbility().getSchedulers().forEach(id -> {
+            if (trigger instanceof Trigger t) {
+                t.getAbility().getSchedulers().forEach(id -> {
                     Bukkit.getScheduler().cancelTask(id);
                 });
             }

@@ -4,14 +4,13 @@ import lombok.Getter;
 import lombok.Setter;
 import net.rapust.bapi.bosses.Ability;
 
-public class HealthTrigger {
+public class HealthTrigger extends Trigger {
 
-    @Getter @Setter private Ability ability;
-    @Getter @Setter private Double onHealth = null;
-    @Getter @Setter private Double onPercent = null;
+    @Getter @Setter private Double onHealth = 0.0D;
+    @Getter @Setter private Double onPercent = 0.0D;
 
     public HealthTrigger(Ability ability) {
-        this.ability = ability;
+        super(ability);
     }
 
 }

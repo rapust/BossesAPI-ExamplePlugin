@@ -4,14 +4,13 @@ import lombok.Getter;
 import lombok.Setter;
 import net.rapust.bapi.bosses.Ability;
 
-public class TimedTrigger {
+public class TimedTrigger extends Trigger {
 
-    @Getter @Setter private Ability ability;
     @Getter @Setter private Long repeatingTime;
     @Getter @Setter private Long lastUsageTime = 0L;
 
     public TimedTrigger(Ability ability, Long time) {
-        this.ability = ability;
+        super(ability);
         this.repeatingTime = time;
     }
 
