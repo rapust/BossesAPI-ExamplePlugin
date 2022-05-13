@@ -12,11 +12,15 @@ group 'net.rapust'
 version '1.0-SNAPSHOT'
 
 repositories {
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+        content {
+            includeGroup 'org.bukkit'
+            includeGroup 'org.spigotmc'
+        }
+    }
     mavenCentral()
     mavenLocal()
-    flatDir {
-        dirs 'libs'
-    }
 }
 
 shadowJar {
@@ -31,9 +35,9 @@ shadowJar {
 
 dependencies {
     implementation 'com.google.code.gson:gson:2.9.0'
-    compileOnly 'org.projectlombok:lombok:1.18.22'
-    compileOnly name: 'spigot-1.16.5'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    compileOnly 'org.spigotmc:spigot:1.16.5-R0.1-SNAPSHOT'
 
-    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
 }

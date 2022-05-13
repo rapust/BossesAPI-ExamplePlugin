@@ -6,8 +6,6 @@ import lombok.Setter;
 import net.rapust.bapi.databases.SQLDatabase;
 import net.rapust.bapi.enums.Resist;
 import net.rapust.bapi.managers.BossesManager;
-import net.rapust.bapi.triggers.DamageTypeTrigger;
-import net.rapust.bapi.triggers.HealthTrigger;
 import net.rapust.bapi.triggers.TimedTrigger;
 import net.rapust.bapi.triggers.Trigger;
 import net.rapust.bapi.utils.Logger;
